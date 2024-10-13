@@ -1,0 +1,1 @@
+create table SendPayItem (id varchar(255) not null, hash varchar(255), phone varchar(255), serviceId varchar(255), spId varchar(255), primary key (id)) engine=InnoDB;

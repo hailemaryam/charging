@@ -1,6 +1,6 @@
 package com.hmmk.melkite;
 
-import com.hmmk.melkite.Entity.SendPayItem;
+import com.hmmk.melkite.DTO.SendPayItem;
 import jakarta.enterprise.context.ApplicationScoped;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;
@@ -49,17 +49,17 @@ public class SendPayRequest {
                 "      <soapenv:Header>\n" +
                 "          <tns:RequestSOAPHeader\n" +
                 "              xmlns:tns=\"http://www.huawei.com.cn/schema/common/v2_1\">\n" +
-                "              <tns:spId>" + sendPayItem.spId + "</tns:spId>\n" +
-                "              <tns:spPassword>" + sendPayItem.hash + "</tns:spPassword>\n" +
+                "              <tns:spId>" + sendPayItem.getSpId() + "</tns:spId>\n" +
+                "              <tns:spPassword>" + sendPayItem.getHash() + "</tns:spPassword>\n" +
                 "              <tns:timeStamp>20220621000000</tns:timeStamp>\n" +
-                "              <tns:serviceId>" + sendPayItem.serviceId + "</tns:serviceId>\n" +
-                "              <tns:OA>"+ sendPayItem.phone + "</tns:OA>\n" +
-                "              <tns:FA>" + sendPayItem.phone + "</tns:FA>\n" +
+                "              <tns:serviceId>" + sendPayItem.getServiceId() + "</tns:serviceId>\n" +
+                "              <tns:OA>"+ sendPayItem.getPhone() + "</tns:OA>\n" +
+                "              <tns:FA>" + sendPayItem.getPhone() + "</tns:FA>\n" +
                 "          </tns:RequestSOAPHeader>\n" +
                 "      </soapenv:Header>\n" +
                 "      <soapenv:Body>\n" +
                 "          <loc:chargeAmount>\n" +
-                "              <loc:endUserIdentifier>" + sendPayItem.phone + "</loc:endUserIdentifier>\n" +
+                "              <loc:endUserIdentifier>" + sendPayItem.getPhone() + "</loc:endUserIdentifier>\n" +
                 "              <loc:charge>\n" +
                 "                  <description>charged</description>\n" +
                 "                  <currency>Birr</currency>\n" +

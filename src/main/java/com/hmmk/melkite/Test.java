@@ -1,6 +1,6 @@
 package com.hmmk.melkite;
 
-import com.hmmk.melkite.Entity.SendPayItem;
+import com.hmmk.melkite.DTO.SendPayItem;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;

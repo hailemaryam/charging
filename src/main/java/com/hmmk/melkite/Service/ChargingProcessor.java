@@ -58,7 +58,7 @@ public class ChargingProcessor {
         }
     }
 
-    SendPayItem updateSendPayItem(SendPayItem sendPayItem, String response){
+    private SendPayItem updateSendPayItem(SendPayItem sendPayItem, String response){
         sendPayItem.setLastSentTime(Instant.now());
         if (response.contains("chargeAmountResponse")){
             sendPayItem.setStatus(true);

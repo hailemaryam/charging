@@ -1,4 +1,4 @@
-package com.hmmk.melkite;
+package com.hmmk.melkite.Service;
 
 import com.hmmk.melkite.DTO.SendPayItem;
 import jakarta.enterprise.context.ApplicationScoped;

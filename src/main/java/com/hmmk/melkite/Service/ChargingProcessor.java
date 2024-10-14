@@ -1,7 +1,6 @@
 package com.hmmk.melkite.Service;
 
 import com.hmmk.melkite.DTO.SendPayItem;
-import com.hmmk.melkite.SendPayRequest;
 import io.smallrye.reactive.messaging.annotations.Blocking;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;

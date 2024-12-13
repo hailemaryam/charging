@@ -22,8 +22,11 @@ public class ChargingProcessor {
     @Channel("chargeable-item")
     Emitter<SendPayItem> emitChargeableItem;
     @Inject
-    @Channel("success-notifier")
-    Emitter<SendPayItem> emitSuccessNotifier;
+    @Channel("success-notifier-reporting")
+    Emitter<SendPayItem> emitSuccessNotifierReporting;
+    @Inject
+    @Channel("success-notifier-web-register")
+    Emitter<SendPayItem> emitSuccessNotifierWebRegister;
     @Inject
     @Channel("fail-notifier")
     Emitter<SendPayItem> emitFailNotifier;
@@ -51,7 +54,8 @@ public class ChargingProcessor {
         String chargingResponse = sendPayRequest.send(sendPayItem);
         SendPayItem updatedSendPayItem = updateSendPayItem(sendPayItem, chargingResponse);
         if (updatedSendPayItem.getStatus()){
-            emitSuccessNotifier.send(updatedSendPayItem);
+            emitSuccessNotifierReporting.send(updatedSendPayItem);
+            emitSuccessNotifierWebRegister.send(updatedSendPayItem);
         } else {
             emitChargeableItem.send(updatedSendPayItem);
         }

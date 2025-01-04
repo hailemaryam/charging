@@ -10,7 +10,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SendPayItem {
-    private String id;
+    private Long id;
     private String atDateOf;
     private String spId;
     private String hash;
